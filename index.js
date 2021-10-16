@@ -3,6 +3,11 @@ const userText = document.getElementById("search");
 document.getElementById("button").addEventListener("click", (e) => {
   getData(userText.value);
 });
+userText.addEventListener("keydown", (e) => {
+  //When the user press enter in the input box the wanted pokemon shows up
+  if (e.key === "Enter") getData(userText.value);
+});
+
 const getData = async (nameOrId) => {
   if (!nameOrId) {
     alert("error");
@@ -38,6 +43,7 @@ const getData = async (nameOrId) => {
     console.error(error);
   }
 };
+//get the type from api
 function getType() {
   document
     .getElementById("types-value")
@@ -62,7 +68,8 @@ function showAllRelatedPokemonsOnDom(pokemons) {
   removePreviousTypesFromDom(".new-poke-by-type");
   pokemons.forEach((pokemon) => {
     const newList = document.createElement("li");
-    newList.className = "new-poke-by-type list-group-item";
+    newList.className =
+      "new-poke-by-type list-group-item list-group-item-action list-group-item-secondary";
     newList.textContent = pokemon.pokemon.name;
     document.getElementById("related-pokemons").append(newList);
   });

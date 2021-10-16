@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="shortcut icon" href="#" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,31 +18,88 @@
     <script src="index.js" defer></script>
   </head>
   <body>
-    <input id="search" placeholder="Search pokemons here" />
-    <button id="button" class="btn btn-info">submit</button>
-    <p id="pokemon-name">
-      name:
-      <span id="name-value"></span>
-    </p>
-    <p id="height">
-      height:
-      <span id="height-value"></span>
-    </p>
-    <p id="weight">
-      weight:
-      <span id="weight-value"></span>
-    </p>
-    <p id="types">
-      types:
-      <span id="types-value"></span>
-    </p>
-    <img
-      class="img-thumbnail"
-      id="img"
-      src="https://bakes.co.il/wp-content/uploads/2020/12/%D7%A4%D7%95%D7%A7%D7%99%D7%9E%D7%95%D7%9F-scaled.jpg"
-    />
-    <ul id="related-pokemons" class="list-group">
-      All related pokemons
-    </ul>
+    <section class="vh-100" id="section1">
+      <div class="container py-3 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col">
+            <div class="col">
+              <div
+                class="card"
+                id="list1"
+                style="border-radius: 0.75rem; background-color: #d5def3da"
+              >
+                <div
+                  class="
+                    col
+                    d-flex
+                    justify-content-center
+                    align-items-center
+                    h-100
+                  "
+                  id="details"
+                >
+                  <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+                    <i class="fas fa-check-square me-1"></i>
+                    <span id="page-title">Pokedex</span>
+                  </p>
+                  <div class="col">
+                    <input
+                      class="
+                        form-control form-control-lg
+                        border-4
+                        add-todo-input
+                        bg-transparent
+                        rounded
+                      "
+                      id="search"
+                      autocomplete="off"
+                      placeholder="    Search pokemons here"
+                    />
+                    <span class="col-auto px-0 mx-0 mr-2"
+                      ><div class="col-auto px-0 mx-0 mr-2">
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-lg"
+                          id="button"
+                        >
+                          Find pokemon
+                        </button>
+                      </div></span
+                    >
+                  </div>
+                  <p id="pokemon-name">
+                    name:
+                    <span id="name-value"></span>
+                  </p>
+                  <p id="height">
+                    height:
+                    <span id="height-value"></span>
+                  </p>
+                  <p id="weight">
+                    weight:
+                    <span id="weight-value"></span>
+                  </p>
+                  <p id="types">
+                    types:
+                    <span id="types-value"></span>
+                  </p>
+                </div>
+                <img
+                  class="img-thumbnail rounded mx-auto d-block border-0"
+                  id="img"
+                  src="img/pokedex2.jfif"
+                  style="background-color: transparent"
+                />
+                <div class="text-center">
+                  <ul id="related-pokemons" class="list-group">
+                    All related pokemons
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
