@@ -1,11 +1,11 @@
 const url = "https://pokeapi.co/api/v2";
 const userText = document.getElementById("search");
 document.getElementById("button").addEventListener("click", (e) => {
-  getData(userText.value);
+  getData(userText.value.toLowerCase());
 });
 userText.addEventListener("keydown", (e) => {
   //When the user press enter in the input box the wanted pokemon shows up
-  if (e.key === "Enter") getData(userText.value);
+  if (e.key === "Enter") getData(userText.value.toLowerCase());
 });
 
 const getData = async (nameOrId) => {
