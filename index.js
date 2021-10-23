@@ -17,7 +17,12 @@ const getData = async (nameOrId) => {
   try {
     removePreviousTypesFromDom(".newType");
     removePreviousTypesFromDom(".new-poke-by-type");
-    const resPokemon = await axios.get(`${url}/pokemon/get/${nameOrId}`);
+
+    let resPokemon;
+    if (!isNaN(nameOrId))
+      resPokemon = await axios.get(`${url}/pokemon/get/${nameOrId}`);
+    else resPokemon = await axios.get(`${url}/pokemon/query?name=${nameOrId}`);
+
     document.getElementById("img").src = resPokemon.data.front_pic;
     document.getElementById("name-value").textContent = resPokemon.data.name;
     document.getElementById("height-value").textContent =
