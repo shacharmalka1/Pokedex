@@ -1,4 +1,5 @@
-const url = "https://pokeapi.co/api/v2";
+// const url = "https://pokeapi.co/api/v2";
+const url = "http://localhost:8080";
 const userText = document.getElementById("search");
 document.getElementById("button").addEventListener("click", (e) => {
   getData(userText.value.toLowerCase());
@@ -16,8 +17,8 @@ const getData = async (nameOrId) => {
   try {
     removePreviousTypesFromDom(".newType");
     removePreviousTypesFromDom(".new-poke-by-type");
-    const resPokemon = await axios.get(`${url}/pokemon/${nameOrId}`);
-    document.getElementById("img").src = resPokemon.data.sprites.front_default;
+    const resPokemon = await axios.get(`${url}/pokemon/get/${nameOrId}`);
+    document.getElementById("img").src = resPokemon.data.front_pic;
     document.getElementById("name-value").textContent = resPokemon.data.name;
     document.getElementById("height-value").textContent =
       resPokemon.data.height;
@@ -29,12 +30,12 @@ const getData = async (nameOrId) => {
       newSpan.textContent = `| ${resPokemon.data.types[i].type.name} | `;
       document.getElementById("types-value").append(newSpan);
     }
-    img.src = resPokemon.data.sprites.front_default;
+    img.src = resPokemon.data.front_pic;
     img.onmouseenter = function () {
-      img.src = resPokemon.data.sprites.back_default;
+      img.src = resPokemon.data.back_pic;
     };
     img.onmouseout = function () {
-      img.src = resPokemon.data.sprites.front_default;
+      img.src = resPokemon.data.front_pic;
     };
 
     getType();
