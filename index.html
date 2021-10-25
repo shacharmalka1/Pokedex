@@ -11,6 +11,7 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
@@ -25,6 +26,7 @@
               id="list1"
               style="border-radius: 0.75rem; background-color: #eff1f211"
             >
+            <span id="connect"></span>
               <div class="card-body py-4 px-4 px-md-5">
                 <p class="h1 text-center mt-2 mb-4 pb-4 text-white">
                   <i class="fas fa-check-square me-1"></i>
@@ -34,7 +36,7 @@
                   <div class="col col-11 mx-auto">
                     <div class="input-group">
                         <input type="search" id="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                        aria-describedby="search-addon" />
+                        />
                         <button type="button" id="button" class="btn btn-outline-primary">Search pokemon</button>
                       </div>
                   </div>
@@ -55,20 +57,21 @@
               style="border-radius: 0.75rem; background-color: #eff1f211"
             >
            <div class="text-center">
-            <p>
+            
+            <div id="signIn">
               <input
-              type="userName"
+              
               name="userName"
               placeholder="username"
-              required="required"
               autocomplete="off"
-              id="userName"
-            /><span><span><button class="btn btn-outline-primary">Sign in</button></span>
-            </p>
-            <span><button class="btn btn-outline-primary">Catch</button></span>
-            <span><button class="btn btn-outline-primary">Release</button></span>
+              id="userNameSignIn"
+            /><span><button id="signInButton" class="btn btn-outline-primary">Sign in</button></span>
+            </div>
+            <span><button  class="btn btn-outline-primary" id="catchButton"  >Catch</button></span>
+            <span><button class="btn btn-outline-primary" id="releaseButton" >Release</button></span>
           </br>
-            <a href="#">Register here</a>
+            <a href="#signUpButton">Register here</a>
+            <span id="pokeId" class="" style="display: none;"></span>
                   <p id="pokemon-name" class="h5 text-cen  mt-2 mb-4 text-black">
                     Name: <span id="name-value"  class="stats text-primary"></span>
                   </p>
@@ -90,6 +93,16 @@
                   />
                   <ul id="related-pokemons" class="list-group" >
                   </ul>
+                </br>
+                  <div id="signUp">
+                    <input
+                    
+                    name="userName"
+                    placeholder="username"
+                    autocomplete="off"
+                    id="userNameSignUp"
+                  /><span><button id="signUpButton" class="btn btn-outline-primary"  >Sign up</button></span>
+                  </div>
            </div>
           
 
