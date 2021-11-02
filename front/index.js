@@ -1,5 +1,5 @@
 // const url = "https://pokeapi.co/api/v2";
-const url = "http://localhost:8080";
+const url = "https://shacharmalka24.herokuapp.com";
 const userText = document.getElementById("search");
 document.getElementById("button").addEventListener("click", () => {
   getData(userText.value.toLowerCase());
